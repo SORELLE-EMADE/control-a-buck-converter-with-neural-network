@@ -1,131 +1,78 @@
-#  Buck Converter Simulation — Perturbation Analysis & Control Strategy
+#  Buck Converter Simulation with Perturbation and Control
 
-This repository provides a **complete simulation of a Buck (step-down) converter**, modeled using Python in a Jupyter Notebook environment. The converter is subjected to **external perturbations**, and a simple **feedback control mechanism** is implemented to stabilize the output.
+This repository contains a simulation of a **Buck Converter** under different operating conditions, implemented in Python using the Jupyter Notebook format.
 
-The simulation is structured in three distinct phases:
-
-1. **Before Perturbation** — the system operates under normal steady-state conditions.
-2. **After Perturbation** — a disturbance is introduced (such as load variation or input voltage drop).
-3. **Control Phase** — a feedback mechanism adjusts the duty cycle to restore the output voltage.
-
----
-
-## Theoretical Background
-
-A **buck converter** is a DC-DC power converter that steps down voltage from its input to output. It is widely used in power electronics and embedded systems.
-
-###  Key Equations
-
-The operation of a buck converter can be modeled using the following differential equations:
-
-- When the switch is **ON**:
-
-\[
-\frac{di_L(t)}{dt} = \frac{V_{in} - V_{out}(t)}{L}, \quad \frac{dV_{out}(t)}{dt} = \frac{i_L(t) - \frac{V_{out}(t)}{R}}{C}
-\]
-
-- When the switch is **OFF**:
-
-\[
-\frac{di_L(t)}{dt} = \frac{-V_{out}(t)}{L}, \quad \frac{dV_{out}(t)}{dt} = \frac{i_L(t) - \frac{V_{out}(t)}{R}}{C}
-\]
-
-Where:
-- \( L \): Inductance
-- \( C \): Capacitance
-- \( R \): Load resistance
-- \( i_L(t) \): Inductor current
-- \( V_{out}(t) \): Output voltage
-- \( V_{in} \): Input voltage
+The simulation explores how a DC-DC buck converter behaves under:
+- Normal conditions (before any perturbation),
+- During disturbance (perturbation phase),
+- And under control action (feedback control applied after disturbance).
 
 ---
 
-##  Simulation Goals
+## Objectives
 
-- Model the **discrete-time behavior** of the converter.
-- Simulate the **evolution of the inductor current** and **output voltage** over time.
-- Apply a **disturbance** to the system (such as a sudden change in input voltage).
-- Implement a **simple PI-like control** on the duty cycle to maintain a constant output voltage.
+The main goals of this project are:
+
+1. **To simulate the dynamics of a buck converter**:
+   - Using differential equations and discrete time steps.
+   - Observing how output voltage and inductor current evolve over time.
+
+2. **To analyze the effect of perturbations**:
+   - By introducing a disturbance (e.g., a change in load or input voltage) during the simulation.
+   - Visualizing the impact on system stability.
+
+3. **To implement and test a control strategy**:
+   - Applying a **duty cycle correction** to recover nominal operation.
+   - Observing the controlled response and performance of the converter.
 
 ---
 
-## Simulation Phases & Plots
+##  Simulation Phases
 
-### 1. Before Perturbation
+The notebook provides plots and visualizations for each of the following phases:
 
-This phase establishes the **reference behavior** of the converter. The duty cycle is initially set based on the desired output voltage:
+### Before Perturbation
+*Insert here a figure showing the voltage and current evolution under normal conditions.*
 
-\[
-D = \frac{V_{out}}{V_{in}}
-\]
-
-You can insert a figure like this:
-
-> _Example Placeholder:_
+> _Example placeholder:_
 > ![Before Perturbation](figures/before_perturbation.png)
 
 ---
 
-### 2. After Perturbation
+###  After Perturbation
+*Insert here a figure showing the disturbance effect (e.g., sudden drop in input voltage or load variation).*
 
-A sudden disturbance is introduced at time step \( t = t_0 \). This may represent:
-- A drop in \( V_{in} \)
-- A change in the load resistance \( R \)
-
-The converter no longer maintains the reference output voltage:
-
-\[
-V_{out}(t_0^+) < V_{ref}
-\]
-
-> _Example Placeholder:_
+> _Example placeholder:_
 > ![After Perturbation](figures/after_perturbation.png)
 
-This phase highlights the converter's **vulnerability to dynamic changes**.
-
 ---
 
-### 3. Control Phase
+###  Control Phase
+*Insert here a figure showing how the system recovers after the control is applied.*
 
-A **feedback mechanism** is introduced to adjust the duty cycle \( D \), aiming to bring the output voltage back to its reference value:
-
-\[
-D(t+1) = D(t) + K_p \cdot (V_{ref} - V_{out}(t))
-\]
-
-Where:
-- \( K_p \): Proportional gain
-- \( V_{ref} \): Desired reference voltage
-
-This simulates a basic **proportional controller** (or P-controller).
-
-> _Example Placeholder:_
+> _Example placeholder:_
 > ![Control](figures/control_response.png)
 
-The system is expected to **stabilize** progressively as the controller acts to compensate for the disturbance.
+---
+
+##  Duty Cycle and Control Logic
+
+- The duty cycle (`D`) is a key parameter used to regulate the output voltage.
+- In the simulation:
+  - The initial `D` is set to regulate a nominal output.
+  - When the perturbation occurs, `D` is recalculated or adjusted using a simple control rule.
+  - The goal is to maintain the output voltage around a desired reference value.
 
 ---
 
-## Duty Cycle and Regulation
+##  How to Run the Simulation
 
-The **duty cycle** \( D \) is the primary control variable. It determines how much time the switch is ON during each cycle. The initial value is computed analytically:
+### Prerequisites
+Make sure you have the following installed:
 
-\[
-D = \frac{V_{out}}{V_{in}}
-\]
+- Python 3.x
+- Jupyter Notebook
+- NumPy
+- Matplotlib
 
-But during the simulation, it evolves dynamically depending on system performance.
-
----
-
-##  Example Simulation Output
-
-You will see plots showing:
-- The evolution of \( V_{out}(t) \) over time
-- The inductor current \( i_L(t) \)
-- The changes in duty cycle \( D(t) \)
-- The moment of disturbance
-- The correction applied by the controller
-
----
 
