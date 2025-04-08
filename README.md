@@ -51,7 +51,7 @@ The notebook provides plots and visualizations for each of the following phases:
 *Insert here a figure showing how the system recovers after the control is applied.*
 
 > _Example placeholder:_
-> ![Control](figures/control_response.png)
+> ![Control](control.png)
 
 ---
 
