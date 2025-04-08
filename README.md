@@ -32,25 +32,18 @@ The main goals of this project are:
 The notebook provides plots and visualizations for each of the following phases:
 
 ### Before Perturbation
-*Insert here a figure showing the voltage and current evolution under normal conditions.*
-
-> _Example placeholder:_
 > ![Before Perturbation](without_pertubation.png)
 
 ---
 
 ###  After Perturbation
-*Insert here a figure showing the disturbance effect (e.g., sudden drop in input voltage or load variation).*
 
-> _Example placeholder:_
 > ![After Perturbation](with_pertubation.png)
 
 ---
 
 ###  Control Phase
-*Insert here a figure showing how the system recovers after the control is applied.*
 
-> _Example placeholder:_
 > ![Control](control.png)
 
 ---
@@ -62,7 +55,7 @@ The notebook provides plots and visualizations for each of the following phases:
   - The initial `D` is set to regulate a nominal output.
   - When the perturbation occurs, `D` is recalculated or adjusted using a simple control rule.
   - The goal is to maintain the output voltage around a desired reference value.
-
+> ![Control](control.png)
 ---
 
 ##  How to Run the Simulation
