@@ -43,7 +43,7 @@ The notebook provides plots and visualizations for each of the following phases:
 *Insert here a figure showing the disturbance effect (e.g., sudden drop in input voltage or load variation).*
 
 > _Example placeholder:_
-> ![After Perturbation](figures/after_perturbation.png)
+> ![After Perturbation](with_pertubation.png)
 
 ---
 
