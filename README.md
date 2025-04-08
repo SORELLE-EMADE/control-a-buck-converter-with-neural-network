@@ -35,7 +35,7 @@ The notebook provides plots and visualizations for each of the following phases:
 *Insert here a figure showing the voltage and current evolution under normal conditions.*
 
 > _Example placeholder:_
-> ![Before Perturbation]([figures/before_perturbation.png](https://github.com/SORELLE-EMADE/control-a-buck-converter-with-neural-network/blob/2f972fe8d676ab7b029945e9cdfba20e1be6826a/without_pertubation.png))
+> ![Before Perturbation](without_pertubation.png)
 
 ---
 
